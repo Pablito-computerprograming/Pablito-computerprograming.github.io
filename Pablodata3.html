@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Sevillana&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Black+Ops+One&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Sevillana&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Black+Ops+One&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Henny+Penny&family=Sevillana&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0 auto;
+  max-width: 600px;
+  background: #1ECCD2;
+}
+div {
+  height: 300px;
+  background-size: 100% 100%;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: 'Barriecito';
+  text-align: center;
+  font-size: 75px;
+  color: #E15A0B;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: #E15A0B;
+  margin: 0px 0 70px 0;
+  font-family: 'Black Ops One';
+}
+p {
+  color: #19E10B;
+  background: black;
+  background: linear-gradient(bottom, rgba(151,217,69,1), rgba(161,225,75,.4));
+  background: -webkit-linear-gradient(bottom, rgba(151,217,69,1), rgba(161,225,75,.4));
+  background: -moz-linear-gradient(bottom, rgba(151,217,69,1), rgba(161,225,75,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+  font-family: 'Henny Penny';
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.Laptop{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSl-GsMIuay1_cxoha54p15Y0GaRKXglVR2w&s");
+  
+}
+.Tablet{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXavIF10Swt1lqMOBRSybDiLzwKO8keZuCzQ&s");
+}
+.Phone{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEBmfXlB-ID-LuKamL-G1RVnSVMV3ya8aQoQ&s");
+}
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+input {
+	font-size: 22px;
+}
+
+
+</style>
+
+</head>
+
+<body>
+<h1>Our Services</h1>
+<h2>a New York City eatery</h2>
+<div class="Laptop">
+<input type="number" class="quantities" min="0" style="width: 50px">
+  <p>Microsoft Laptop <span class="price">$750</span><br />
+  <small>This is our laptop it is an all new laptop with the best technology in it it is capable of anything you need to do at a constant good performance. </small></p>
+</div>
+
+<div class="Tablet">
+<input type="number" class="quantities" min="0" style="width: 50px">
+  <p>Microsoft Laptop <span class="price">$500</span><br />
+  <small>This is our newest generation of laptop it comes with a magnetic stick-on keybord so it can be a more cost friendly alternitave to the Laptop.</small></p>
+</div>
+
+<div class="Phone">
+<input type="number" class="quantities" min="0" style="width: 50px">
+  <p>The Micro Phone <span class="price">$150</span><br />
+  <small>This is our cellphone it is an optimal size for all handswith many color options at a very cheap price..</small></p>
+</div>
+ <br><br>
+  <br><br>
+  <input id="Name" placeholder="Your Name">
+  <input id="Email" placeholder="Your Email">
+  <input id="submit" type="submit">
+   <br><br>
+    <br><br>
+	
+	
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
+  
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCujlOnH5sF8qMHoqrQzFnCTuBNIW75lE0",
+    authDomain: "pablo3-3d84e.firebaseapp.com",
+    projectId: "pablo3-3d84e",
+    storageBucket: "pablo3-3d84e.firebasestorage.app",
+    messagingSenderId: "271566878948",
+    appId: "1:271566878948:web:6a47f4dd7feddc532a94f1"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app); 
+  const Name = document.querySelector("#Name") 
+  const Email = document.querySelector("#Email")
+  const quantities = document.querySelectorAll(".quantities")
+  const prices = document.querySelectorAll(".price") 
+  const itemsList = ["Laptop", "Tablet", "Phone"]
+  document.querySelector('#submit').addEventListener('click', Submit)
+  
+  
+  function Submit() {
+  	  const timestamp = buildTimestamp()
+	  let total = 0
+	  let cart = { }
+	  for  (let i=0; i<quantities.length; i=i+1) {
+	  	if (quantities[i].value != "0" && quantities[i].value != "") {	
+		    let price = prices[i].innerHTML.replace('$', '')
+		    total = total + quantities[i].value * price 
+
+	  		cart[itemsList[i]] = parseInt(quantities[i].value) 
+	  	}
+	  	quantities[i].value = ""
+	  }
+
+	  
+  	  set(ref(db, timestamp), {
+  		  Name: Name.value,
+  	      email: Email.value,
+		  cart: cart,
+          totalPrice: total,
+      	  paid: "not yet",
+
+  	  });
+
+  	  Name.value = ""
+  	  Email.value = ""
+  	}
+	
+	
+	function buildTimestamp() {
+		  const now = new Date();
+		  let timestamp = now.getFullYear().toString() + "/";
+		  //const month = now.toLocaleString('default', { month: 'long' });
+
+		  let month = now.getMonth()+1   //add 1 because Javascript uses 0 for January
+		  month = month.toString()
+		  month = addLeadingZero(month)
+		  timestamp += month + "/"; 
+
+		  let date = now.getDate().toString()
+		  date = addLeadingZero(date)
+		  timestamp += date + "/";
+
+		  let hours = now.getHours().toString()
+		  hours = addLeadingZero(hours)
+		  timestamp += hours + ":";
+
+		  let minutes = now.getMinutes().toString()
+		  minutes = addLeadingZero(minutes)
+		  timestamp += minutes + ":";
+
+		  let seconds = now.getSeconds().toString()
+		  seconds = addLeadingZero(seconds)
+		  timestamp += seconds;
+  
+		  return timestamp
+		}
+	
+		function addLeadingZero(units) {
+			if (units.length < 2) {
+				units = "0" + units
+			}
+			return units
+		}
+</script>
+<script>
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+</body>
