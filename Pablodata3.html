@@ -72,6 +72,9 @@ small {
 .Phone{
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEBmfXlB-ID-LuKamL-G1RVnSVMV3ya8aQoQ&s");
 }
+.Watch{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStaYDd6hJ7coDKpQRYciesotSQEFDMbSp-ig&s");
+}
 .price {
   float: right;
 }
@@ -116,7 +119,7 @@ input {
 
 <div class="Tablet">
 <input type="number" class="quantities" min="0" style="width: 50px">
-  <p>Microsoft Laptop <span class="price">$500</span><br />
+  <p>Microsoft Tablet <span class="price">$500</span><br />
   <small>This is our newest generation of laptop it comes with a magnetic stick-on keybord so it can be a more cost friendly alternitave to the Laptop.</small></p>
 </div>
 
@@ -124,6 +127,12 @@ input {
 <input type="number" class="quantities" min="0" style="width: 50px">
   <p>The Micro Phone <span class="price">$150</span><br />
   <small>This is our cellphone it is an optimal size for all handswith many color options at a very cheap price..</small></p>
+</div>
+
+<div class="Watch">
+<input type="number" class="quantities" min="0" style="width: 50px">
+  <p>The Microsoft Watch <span class="price">$100</span><br />
+  <small>This is our high class top of the line watch that can not only tell time but send calls, messages, alarms, and Much Much More.</small></p>
 </div>
  <br><br>
   <br><br>
@@ -159,7 +168,7 @@ input {
   const Email = document.querySelector("#Email")
   const quantities = document.querySelectorAll(".quantities")
   const prices = document.querySelectorAll(".price") 
-  const itemsList = ["Laptop", "Tablet", "Phone"]
+  const itemsList = ["Laptop", "Tablet", "Phone", "Watch"]
   document.querySelector('#submit').addEventListener('click', Submit)
   
   
@@ -183,7 +192,7 @@ input {
   	      email: Email.value,
 		  cart: cart,
           totalPrice: total,
-      	  paid: "not yet",
+      	  paid: "paid",
 
   	  });
 
